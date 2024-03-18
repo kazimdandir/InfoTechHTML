@@ -1,0 +1,50 @@
+/* Bağlantının normal hali */
+#link {
+    color: #007bff; /* Bağlantı rengi */
+    text-decoration: none; /* Altı çizili olmayacak */
+    transition: color 0.3s ease; /* Geçiş efekti */
+    font-size: 25px
+  }
+  
+  /* Fare üzerine geldiğinde */
+  #link:hover {
+    color: #b3b000; /* Fare üzerine gelindiğinde bağlantı rengi */
+  }
+
+h1 
+{
+    color: rgb(226, 43, 43); /* Başlık metni rengi */
+    font-size: 36px; /* Başlık metni font boyutu */
+    font-weight: bold; /* Kalın font */
+    text-align: center; /* Metni ortala */
+    margin-top: 20px; /* Üst boşluk */
+    margin-bottom: 20px; /* Alt boşluk */
+}
+
+/* h2 başlığı için stil */
+h2 
+{
+    color: #2e8b57; /* Başlık metni rengi - Orman yeşili */
+    font-size: 28px; /* Başlık metni font boyutu */
+    font-weight: bold; /* Kalın font */
+    text-align: center; /* Metni solda tut */
+    margin-top: 25px; /* Üst boşluk */
+    margin-bottom: 20px; /* Alt boşluk */
+}
+  
+  /* h3 başlığı için stil */
+h3 
+{
+    color: #bd3cb2; /* Başlık metni rengi - Çelik mavisi */
+    font-size: 22px; /* Başlık metni font boyutu */
+    font-weight: normal; /* Normal font */
+    text-align: center; /* Metni sola yasla */
+    margin-top: 15px; /* Üst boşluk */
+    margin-bottom: 10px; /* Alt boşluk */
+}
+
+h6
+{
+    font-size: 15px;
+    text-align: right;
+}
