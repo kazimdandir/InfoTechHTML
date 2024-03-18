@@ -1,0 +1,46 @@
+h1
+{
+    color: red;
+    font-weight: normal;
+    padding: 20px;
+    text-align: center;
+}
+
+h2, h3
+{
+    color: orange;
+    background-color: darkgreen;
+    cursor: auto;
+    text-align: center;
+}
+
+h4
+{
+    color: black;
+    border: 10px;
+    font-display: inherit;
+}
+
+.example
+{
+    font-size: large;
+    color: black;
+    font-weight: 900;
+    padding: 20px;
+}
+
+#link
+{
+    color: blue;
+    font-size: 20px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.profil
+{
+    margin : 30px 80px 30px 80px; 
+    border : 1px solid orangered;
+    padding: 10px;
+}
+

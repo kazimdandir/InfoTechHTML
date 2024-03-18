@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genel Form</title>
+</head>
+<body>
+    <h3>Kayıt Formu</h3>
+    <hr>
+    <form action="" method="post">
+
+    <table>
+        <tr>
+            <td>Adı Soyadı :</td><td><input type="text" name="adSoyad" size="30" maxlength="25"></td>
+        </tr>
+
+        <tr>
+            <td>Eposta Adresi : </td><td><input type="email" name="email" size="50"></td>
+        </tr>
+
+        <tr>
+            <td>Şifre (max 8) : </td><td><input type="password" name="sifre" size="30" maxlength="8"></td>
+        </tr>
+
+        <tr>
+            <td>
+                Cinsiyet:</td><td><input type="radio" name="Cinsiyet" value="Kadın"> Kadın
+                <input type="radio" name="Cinsiyet" value="Erkek"> Erkek
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Hobileriniz : </td><td><input type="checkbox" name="hobi1" value="Sinema">Sinema<br>
+                <input type="checkbox" name="hobi2" value="Müzik">Müzik<br>
+                <input type="checkbox" name="hobi3" value="Dans">Dans<br>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Eğitim Durumu : </td><td><select name="egitim">
+                <option>Seçiniz</option>
+                <option value="İlkokul">İlkokul</option>
+                <option value="Lise">Lise</option>
+                <option value="Üniversite">Üniversite</option>
+                <option value="Yüksek Lisans">Yüksek Lisans</option>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Adres: </td><td><textarea rows="5" cols="25" name="adres"></textarea> </td>
+        </tr>
+
+        <tr>
+            <td><input type="reset" value="Formu Temizle"></td><td><input type="submit" value="Formu Gönder"></td>
+        </tr>
+
+    </table>
+    </form>   
+</body>
+</html>

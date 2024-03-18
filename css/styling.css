@@ -1,0 +1,19 @@
+h2, h3{
+    color: slateblue;
+    background-color: orange;
+    font-size: 14px;
+}
+
+.text{
+    background-color: yellow;
+    color: royalblue;
+    font-weight: 900;
+}
+
+#link{
+    color: orangered;
+    font-size: 20px;
+    font-weight: normal;
+    background-color: skyblue;
+    text-decoration: none;
+}
