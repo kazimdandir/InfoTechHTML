@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#t1{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#t1 li{
+    float: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#t1 li a{
+    display: block;
+    padding: 12px 14px;
+    background-color: blueviolet;
+    color: white;
+    text-decoration: none;
+}
+
+#t1 li a:hover{
+    background-color: gray;
+}
+
+#t1 .etkin{
+    background-color: blue;
+}

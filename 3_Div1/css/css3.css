@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#mainContainer{
+    background-color: red;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: 1000px;
+}
+
+#banner{
+    background-color: saddlebrown;
+    width: 800px;
+    height: 150px;
+}
+
+#menuLeft{
+    background-color: lightgrey;
+    width: 150px;
+    height: 700px;
+    float: left;
+}
+
+#content{
+    background-color: lightyellow;
+    width: 500px;
+    height: 700px;
+    float: left;
+}
+
+#right{
+    background-color: lightgray;
+    width: 150px;
+    height: 700px;
+    float: left;
+}
+
+#footer{
+    background-color: rosybrown;
+    width: 800px;
+    height: 150px;
+}

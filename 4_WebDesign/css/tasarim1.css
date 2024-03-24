@@ -1,0 +1,92 @@
+body,h1,ul,li{
+
+    margin: 0;
+    padding: 0;
+    
+    }
+    
+    body{
+    
+        background: url('images/ornek.jpg') black;
+        font-family: sans-serif;
+    }
+    
+    .sayfa{
+    
+        width: 950px;
+        margin: 50px auto;
+    }
+    
+    .orta
+    {
+        margin-top: 15px;
+        background: #333;
+    }
+    
+    .orta-sol
+    {
+        float:left;
+        width: 450px;
+    }
+    .orta-sag
+    {
+        float: left;
+        margin: 15px;
+        width: 470px;
+        color:#bbb;
+    }
+    
+    .alt
+    {
+       background: #555;
+       padding: 20px;
+       text-align: center;
+       color: #fff;
+    }
+    
+    .alt a{
+    
+        color:#fff;
+        text-decoration: none;
+    }
+    
+    .temizle
+    {
+        clear:both;
+    }
+    
+    .baslik{
+    
+       float: left;
+       font-size: 21px;
+       color:white;
+       text-decoration: none;
+    }
+    
+    #menu{
+        float:right;
+        list-style: none;
+        margin-top: 10px;
+    }
+    
+    #menu li{
+    
+        float:left;
+    }
+    
+    #menu li a{
+    
+        color:white;
+        text-decoration: none;
+        margin: 5px;
+        padding: 10px 20px;
+    }
+    
+    #menu a:hover,.aktif{
+    
+        background-color: #444;
+        border-radius: 15px;
+    }
+    
+    
+    
