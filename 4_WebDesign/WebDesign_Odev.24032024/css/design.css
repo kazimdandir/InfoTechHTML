@@ -4,6 +4,25 @@ body,h1,ul,li
     padding: 0;
 }
 
+label
+{
+    color: blueviolet;
+    width: 30%;
+    padding: 12px 20px;
+    margin: 10px 23%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+}
+
+input[type=file]
+{
+    display: inherit;
+    margin-top: 10px;
+    margin-left: 25%;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} 
+
 input[type=text]
 {
     width: 50%;
@@ -58,7 +77,7 @@ button:hover
 
 #link
 {
-    color: white;
+    color: #007bff;
     text-decoration: none;
     display: inline-block;
 }
@@ -144,7 +163,7 @@ body
 .alt
 {
    background: #555;
-   padding: 20px;
+   padding: 5px;
    text-align: center;
    color: #fff;
 }
