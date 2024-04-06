@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+hr{
+    margin: 40px;
+}
+
+h2{
+    text-align: center;
+}
+
+
+/*FLEX CONTAINER PROPERTIES*/
+
+.container{
+    background-color: slategray;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    /* flex-direction: column; */
+    /* flex-direction: row-reverse; */
+    /* justify-content: flex-start; */
+    /* justify-content: flex-end; */
+    /* justify-content: center; */
+    justify-content: space-around;
+    /* justify-content: space-between; */
+    /* justify-content: space-evenly; */
+    /* align-items: stretch; */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* flex-wrap: wrap-reverse; */
+    align-content: space-between;
+
+}
+
+.box{
+    background-color: tomato;
+    color: snow;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.box2{
+    background-color: slateblue;
+}
+
+
+/*FLEX ITEMS*/
+
+.flex-container{
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: slategray;
+    display: flex;
+}
+
+.flex-item{
+    background-color: tomato;
+    padding: 20px;
+    color: snow;
+    font-weight: bold;
+}
+
+.blue{
+    background-color: slateblue;
+}
+
+
+/*FLEX GROW*/
+
+.flex-grow{
+    flex-grow: 1;
+}
+
+.grow-2{
+    flex-grow: 2;
+}
+
+.grow-3{
+    flex-grow: 3;
+}
+
+
+/*FLEX BASIS*/
+
+.basis1{
+    flex-basis: 250px;
+}
+
+.basis2{
+    flex-basis: 150px;
+}
+
+.basis3{
+    flex-basis: 450px;
+}
