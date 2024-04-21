@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function carp(){
+            s1 = parseInt(document.getElementById('sayi1').value);
+            s2 = parseInt(document.getElementById('sayi2').value);
+            document.getElementById('sonuc').value = s1*s2;
+        }
+        
+        function topla(){
+            s1 = parseInt(document.getElementById('sayi1').value);
+            s2 = parseInt(document.getElementById('sayi2').value);
+            document.getElementById('sonuc').value = s1+s2;
+        }
+
+        function bol(){
+
+            s1 = parseInt(document.getElementById('sayi1').value);
+            s2 = parseInt(document.getElementById('sayi2').value);
+
+            if(s2!=0)
+            {
+                sonuc=s1/s2;
+            }
+            else
+            {
+                sonuc = "Sıfıra bölme hatası";
+            }
+            document.getElementById('sonuc').value = sonuc;
+        }
+
+        function cikar(){
+            s1 = parseInt(document.getElementById('sayi1').value);
+            s2 = parseInt(document.getElementById('sayi2').value);
+            document.getElementById('sonuc').value = s1-s2;
+        }
+
+    </script>
+
+    <h1>Javascript 4 İşlem</h1>
+
+    <form>
+
+        <label>1. sayı :</label>
+        <input type="text" id="sayi1"><br><br>
+
+        <label>2. sayı :</label>
+        <input type="text" id="sayi2"><br><br>
+
+        <label>Sonuç :</label>
+        <input type="text" id="sonuc"><br><br>
+        
+        <input type="button" onclick="topla();" value="TOPLA">
+        <input type="button" onclick="cikar();" value="ÇIKAR">
+        <input type="button" onclick="carp();" value="ÇARP">
+        <input type="button" onclick="bol();" value="BÖL">
+
+    </form>
+</body>
+</html>
