@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Örnek Çalışmalar</title>
+</head>
+<body>
+
+    <!-- Document Object Models - DOM  -->
+
+    <p id="demo">Html etiketinin içeriği</p>
+
+    <button type="button" onclick="document.getElementById('demo').innerHTML='Hello JS'">TIKLA</button>
+    
+    <hr>
+    <h1>Javascript Toplama İşlemi</h1>
+
+    <form name="toplam">
+
+        <label>1. sayı:</label>
+        <input type="text" id="sayi1"><br><br>
+
+        <label>2. sayı:</label>
+        <input type="text" id="sayi2"><br><br>
+        
+        <input type="button" id="btnTopla" value="TOPLA">
+
+    </form>
+
+    <div id="kutuToplam"></div>
+
+    <script>
+        var btn = document.getElementById("btnTopla");
+
+        btn.onclick = function(){
+            var s1 = Number(document.getElementById('sayi1').value);
+            var s2 = Number(document.getElementById('sayi2').value);
+            var toplam = s1 + s2;
+            
+            document.getElementById('kutuToplam').innerHTML = 'Girilen sayıların toplamı : ' + toplam;
+        }
+    </script>
+
+</body>
+</html>
