@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Element</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+
+    <script>
+        function cevapKontrol(){
+            var myquiz = document.getElementById('quizz');
+            
+            if(myquiz.elements[1].checked)
+            {
+                alert('Cevap doğru');
+            }
+            else
+            {
+                alert('Cevap yanlış');
+            }
+        }
+
+        function konum(event){
+            var x = event.clientX;
+            var y = event.clientY;
+
+            var konum = "x: " + x + " y: " + y;
+
+            document.querySelector('.ekle').innerHTML = konum;
+        }
+    </script>
+</head>
+<body onmousemove="konum(event)">
+
+    <p class="ekle"></p>
+
+    <p id="demo">JS iyi bir programlama dilidir</p>
+
+    <button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click</button>
+
+    <h1>Quiz Örnek</h1>
+    <hr>
+
+    <form id="quizz" onsubmit="cevapKontrol()">
+        <p>Aşağıdakilerden hangisi Türkiye'nin başkentidir?</p>
+        
+        <input type="radio" name="sehir" value="İstanbul"/>
+        <label>İstanbul</label>
+
+        <input type="radio" name="sehir" value="Ankara"/>
+        <label>Ankara</label>
+
+        <input type="radio" name="sehir" value="İzmir"/>
+        <label>İzmir</label>
+        
+        <input type="radio" name="sehir" value="Bursa"/>
+        <label>Bursa</label>
+
+        <input type="radio" name="sehir" value="Balıkesir"/>
+        <label>Balıkesir</label>
+
+        <input type="radio" name="sehir" value="Giresun"/>
+        <label>Giresun</label>
+        <br>
+
+        <input type="submit" value="Gönder">
+    </form>
+</body>
+</html>
