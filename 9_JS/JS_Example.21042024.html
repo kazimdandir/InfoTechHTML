@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Examples</title>
+</head>
+<body>
+   <script>
+        const person ={
+
+            name:'John',
+            age:'23',
+            
+            sayHello : function(){
+                console.log('Hello, i am John');
+            },
+            
+            sayGoodBye(){
+                console.log('Good bye everyone');
+            }
+
+        }
+
+        person.sayHello();
+        person.sayGoodBye();
+
+        console.log(person);
+
+        function add(a, b){
+            console.log(a + b);
+        }
+
+        const functions = [
+            function(){
+                console.log('Ben arrayin ilk itemiyim');
+            },
+
+            function(a){
+                console.log('a argümanını kullanabilirim', a);
+            },
+
+            person.sayHello,
+
+            add(5, 10),
+        ]
+
+        console.log(functions[1](12));
+
+        //Math examples
+
+        const x = 9.6;
+        const ceilX = Math.ceil(x);
+        console.log(ceilX);
+
+        const floorX = Math.floor(x);
+        console.log(floorX);
+
+        const roundedX = Math.round(x);
+        console.log(roundedX);
+
+        const floatNumber = 10/3;
+        console.log(floatNumber.toFixed(3));
+
+        const numberStr = '44px';
+        console.log(Number(numberStr));
+        console.log(parseInt(numberStr));
+
+
+        // string manipulations
+
+        const str1 = 'Hello';
+        const str2 = 'World';
+
+        console.log(str1 + ' ' + str2);
+
+        const sentence = "I'm a developer";
+        console.log(sentence);
+
+        const firstLetter = sentence[0];
+        console.log(firstLetter);
+        console.log(sentence.length);
+        console.log(sentence[sentence.length-1]);
+
+
+   </script> 
+</body>
+</html>
