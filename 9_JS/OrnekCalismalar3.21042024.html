@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function hesapla() {
+            mForm = document.getElementById('radioIslem');
+            s1 = Number(mForm[0].value);
+            s2 = Number(mForm[1].value);
+            var sonuc;
+            if (mForm[2].checked) {
+                sonuc = s1 + s2; 
+            } else if (mForm[3].checked) {
+                sonuc = s1 - s2; 
+            } else if (mForm[4].checked) {
+                sonuc = s1 * s2; 
+            } else if (mForm[5].checked) {
+                sonuc = s1 / s2; 
+            } else {
+                sonuc = 'Bir islem secin';
+            }
+            document.getElementById('sonuc').value = sonuc;
+        }
+    </script>
+</head>
+<body>
+    <h1>Radio islem</h1>
+    <form id="radioIslem">
+        <label>Sayi 1: </label>
+        <input type="text"><br>
+        <label>Sayi 2: </label>
+        <input type="text"><br>
+        <br>
+        <input type="radio" name="islem" value="Topla">
+        <label>Topla</label>
+        <input type="radio" name="islem" value="Cikar">
+        <label>Cikar</label>
+        <input type="radio" name="islem" value="Carp">
+        <label>Carp</label>
+        <input type="radio" name="islem" value="Bol">
+        <label>Bol</label>
+        <br>
+        <input type="button" onclick="hesapla()" value="Hesapla">
+        <input type="text" id="sonuc">
+    </form>
+</body>
+</html>
