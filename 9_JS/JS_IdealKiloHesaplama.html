@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS ile İdeal Kilo Hesaplama</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        #sonuc {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JS-İdeal Kilo Hesaplama</h1>
+
+        <form>
+            <div class="form-group">
+                <label for="boy">Boyunuzu Giriniz:</label>
+                <input type="text" id="boy" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="kilo">Kilonuzu Giriniz:</label>
+                <input type="text" id="kilo" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="dYili">Doğum Yılınızı Giriniz:</label>
+                <input type="text" id="dYili" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="cinsiyet">Cinsiyetinizi Giriniz [E-K]:</label>
+                <input type="text" id="cinsiyet" class="form-control">
+            </div>   
+
+            <div class="form-group">
+                <label for="sonuc">Sonuç:</label>
+                <input type="text" id="sonuc" class="form-control" readonly>
+            </div>
+
+            <button type="button" onclick="hesapla();" class="btn btn-primary">HESAPLA</button>
+        </form>
+    </div>
+
+    <script>
+        function hesapla(){
+            var boy = parseInt(document.getElementById('boy').value);
+            var kilo = parseInt(document.getElementById('kilo').value);
+            var dYili = parseInt(document.getElementById('dYili').value);
+            var cinsiyet = document.getElementById('cinsiyet').value.toLowerCase();
+
+            var k;
+
+            if (cinsiyet === 'e') {
+                k = 0.9;
+            } else if (cinsiyet === 'k') {
+                k = 0.8;
+            } else {
+                k = 0;
+            }
+
+            var gecerliTarih = new Date();
+            var yas = gecerliTarih.getFullYear() - dYili;
+
+            var ideal = (boy - 100 + yas / 10) * k;
+
+            if (ideal === kilo) {
+                document.getElementById('sonuc').value = 'Fitsiniz';
+            } else if (ideal < kilo) {
+                document.getElementById('sonuc').value = 'Şişmansınız';
+            } else {
+                document.getElementById('sonuc').value = 'Zayıfsınız';
+            }
+        }
+    </script>
+
+</body>
+</html>
