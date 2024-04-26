@@ -1,0 +1,28 @@
+body {
+    background-color: #f8f9fa;
+    padding-top: 50px;
+}
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+#sonuc {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+#mesaj {
+    margin-top: 20px;
+    text-align: center;
+    font-style: italic;
+}

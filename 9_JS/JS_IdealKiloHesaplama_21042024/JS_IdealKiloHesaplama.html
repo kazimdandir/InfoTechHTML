@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS ile İdeal Kilo Hesaplama</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="operations.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>JS-İdeal Kilo Hesaplama</h1>
+
+        <form>
+            <div class="form-group">
+                <label for="boy">Boyunuzu Giriniz:</label>
+                <input type="text" id="boy" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="kilo">Kilonuzu Giriniz:</label>
+                <input type="text" id="kilo" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="dYili">Doğum Yılınızı Giriniz:</label>
+                <input type="text" id="dYili" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="cinsiyet">Cinsiyetinizi Giriniz [E-K]:</label>
+                <input type="text" id="cinsiyet" class="form-control">
+            </div>   
+
+            <button type="button" onclick="hesapla();" class="btn btn-primary btn-block">HESAPLA</button>
+
+            <div id="sonuc"></div>
+            <div id="mesaj"></div>
+        </form>
+    </div>
+</body>
+</html>
