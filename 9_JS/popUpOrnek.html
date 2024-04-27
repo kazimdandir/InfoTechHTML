@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input[type="text"] {
+        width: 200px;
+      }
+      label {
+        display: inline-block;
+        width: 200px;
+      }
+      input[type="button"] {
+        margin-left: 200px;
+      }
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>İdeal Kilo Hesaplama</h1>
+    <hr />
+    <form>
+      <label>Boyunuzu giriniz: </label>
+      <input
+        type="text"
+        name="boy"
+        id="boy"
+        placeholder="Boyunuzu giriniz"
+      /><br /><br />
+
+      <label>Kilonuzu giriniz: </label>
+      <input
+        type="text"
+        name="kilo"
+        id="kilo"
+        placeholder="Kilonuzu giriniz"
+      /><br /><br />
+
+      <label>Doğum yılınızı giriniz: </label>
+      <input
+        type="text"
+        name="dogumYili"
+        id="dogumYili"
+        placeholder="Doğum yılınızı giriniz"
+      /><br /><br />
+
+      <label for="cinsiyet">Cinsiyetinizi giriniz [E/K]: </label>
+      <input
+        type="text"
+        name="cinsiyet"
+        id="cinsiyet"
+        placeholder="Cinsiyetinizi giriniz: E ya da K"
+      /><br /><br />
+      <input type="button" onclick="Hesapla();" value="İdeal Kiloyu Hesapla" />
+    </form>
+    <script>
+      function Hesapla() {
+        boy = parseInt(document.getElementById("boy").value);
+        kilo = parseFloat(document.getElementById("kilo").value);
+        dogumYili = parseInt(document.getElementById("dogumYili").value);
+        cinsiyet = document.getElementById("cinsiyet").value.toUpperCase();
+
+        var katsayi;
+        if (cinsiyet === "E") {
+          katsayi = 0.9;
+        } else if (cinsiyet === "K") {
+          katsayi = 0.8;
+        } else {
+          katsayi = 0;
+        }
+
+        yas = new Date().getFullYear() - dogumYili;
+        ideal = ((boy - 100 + yas / 10) * katsayi).toFixed(2);
+
+        var sonuc;
+        var fark = Math.abs(kilo - ideal).toFixed(2);
+        var resim;
+
+        if (ideal == kilo) {
+          sonuc = "Fitsiniz";
+        } else if (ideal < kilo) {
+          sonuc = "Kilolosunuz";
+          if (cinsiyet === "E") {
+            resim = "Image/Fat_Man.jpg";
+          } else if (cinsiyet === "K") {
+            resim = "Image/Fat_Woman.jpg";
+          }
+        } else {
+          sonuc = "Zayıfsını";
+          if (cinsiyet === "E") {
+            resim = "Image/Skinny_Man.jpg";
+          } else if (cinsiyet === "K") {
+            resim = "Image/Skinny_Woman.jpg";
+          }
+        }
+
+        alert(
+          sonuc +
+            ".\nİdeal kilonuz: " +
+            ideal +
+            "\nŞu anki kilonuz: " +
+            kilo +
+            "\nİdeal kilonuzdan " +
+            fark +
+            " kadar " +
+            (ideal < kilo ? "fazlasınız." : "eksiksiniz.")
+        );
+
+        var popupWidth = screen.width;
+        var popupHeight = screen.height;
+        var popup = window.open(
+          "",
+          "_blank",
+          "width=" + popupWidth + ",height=" + popupHeight
+        );
+        popup.document.write("<img src='" + resim + "' alt='Resim'>");
+      }
+    </script>
+  </body>
+</html>

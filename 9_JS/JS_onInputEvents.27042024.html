@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ON Input Events</title>
+
+    <style>
+        input{
+            display: block;
+            margin: 10px;
+        }
+
+        #goster{
+            width: 160px;
+            height: 40px;
+            margin: 10px;
+            border: 1px solid blue;
+            background-color: beige;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="sayi1">
+    <input type="text" id="sayi2">
+    <input type="text" id="islem" value="+">
+    <div id="goster"></div>
+
+    <script>
+        var nesneS1 = document.getElementById('sayi1');
+        var nesneS2 = document.getElementById('sayi2');
+        var islem = document.getElementById('islem');
+        
+        var nesneGoster = document.getElementById('goster');
+        
+        nesneS1.oninput = islemOlay;
+        nesneS2.oninput = islemOlay;
+        islem.oninput = islemOlay;
+
+        function islemOlay(e){
+            var sayi1 = Number(nesneS1.value);
+            var sayi2 = Number(nesneS2.value);
+            
+            if (islem.value == "+"){
+                nesneGoster.innerHTML = sayi1 + sayi2;
+            }
+            else if (islem.value == "-"){
+                nesneGoster.innerHTML = sayi1 - sayi2;
+            }
+            else if (islem.value == "*"){
+                nesneGoster.innerHTML = sayi1 * sayi2;
+            }
+            else if (islem.value == "/"){
+                nesneGoster.innerHTML = sayi1 / sayi2;
+            }
+            else{
+                nesneGoster.innerHTML = "Tanımlanmayan Operatör!";
+            }
+        }
+    </script>
+</body>
+</html>

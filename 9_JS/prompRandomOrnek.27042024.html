@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt-Random Örnek</title>
+</head>
+<body>
+    <script>
+        var rand = Math.floor(Math.random()*100)
+        alert('Bir sayı tutuldu. 0-99 arasında bir sayı tahmin ediniz...')
+        var deneme = 0;
+        var dongu = true;
+
+        do{
+            var sayi = Number(prompt('0-99 arasında bir sayı tahmin ediniz...'));
+            deneme ++;
+            if (sayi == rand) {
+                dongu = false;
+            } else if (sayi > rand) {
+                alert('Daha küçük bir sayı giriniz...');
+            } else if (sayi < rand) {
+                alert('Daha büyük bir sayı giriniz...');
+            }
+        } while (dongu)
+        
+        alert('Tebrikler. Deneme sayiniz: ' + deneme);
+    </script>
+</body>
+</html>

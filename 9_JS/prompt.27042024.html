@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Kullanımı</title>
+</head>
+<body>
+    
+    <h1>Promt Kullanımı</h1>
+    <hr>
+
+    <div id="test">Sonuç : </div>
+
+    <script>
+
+        //var sayi1 = Number(prompt("Bir sayı giriniz", "Sayı 1"));
+        //var sayi2 = Number(prompt("Bir sayı giriniz", "Sayı 2"));
+
+        //var randomSayi = Math.floor(Math.random()*100) //0-100 arası bir sayı üretip 100 ile çarp ve tam sayıya çevir
+        var randomSayi = Math.floor(Math.random()*6+1) //zar at
+
+        document.getElementById('test').innerHTML = 'Sonuç : ' + (randomSayi);
+    </script>
+</body>
+</html>

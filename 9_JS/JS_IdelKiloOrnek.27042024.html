@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İdeal Kilo Uygulaması</title>
+
+    <script>
+        function hesapla(){
+            var boy = parseInt(document.getElementById('boy').value);
+            var kilo = parseInt(document.getElementById('kilo').value);
+            var dYil = parseInt(document.getElementById('dYil').value);
+            var cins = document.getElementById('cins').value;
+
+            var Tarih = new Date();
+            var yas = Tarih.getFullYear() - dYil;
+
+            var k;
+
+            if(cins == 'E' || cins == 'e')
+            {
+                k=0.9;
+            }
+            else if(cins == 'K' || cins == 'k')
+            {
+                k=0.8;
+            }
+            else
+            {
+                k=0;
+            }
+
+            var ideal = (boy - 100 + yas / 10)*k;
+
+            if(ideal == kilo)
+            {
+                document.getElementById('sonuc').innerHTML = "Fitsiniz..." + "İdeal Kilonuz: " + ideal;
+            }
+            else if(ideal < kilo)
+            {
+                document.getElementById('sonuc').innerHTML = "Şişmansınız..." + "İdeal Kilonuz: " + ideal;
+            }
+            else 
+            {
+                document.getElementById('sonuc').innerHTML = "Zayıfsınız..." + "İdeal Kilonuz: " + ideal;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>İdeal Kilo Hesaplama</h1>
+    <hr>
+
+    <form>
+        <table cellpadding="10" cellspacing="10">
+            <tr>
+                <td>Boy: </td> <td><input type="text" id="boy"></td>
+            </tr>
+
+            <tr>
+                <td>Kilo: </td> <td><input type="text" id="kilo"></td>
+            </tr>
+
+            <tr>
+                <td>Doğum Yılı: </td> <td><input type="text" id="dYil"></td>
+            </tr>
+
+            <tr>
+                <td>cinsiyet: </td> <td><input type="text" id="cins" placeholder="E / K"></td>
+            </tr>
+
+            <tr>
+                <td></td> <td><input type="button" id="button" value="Gönder" onclick="hesapla()"></td>
+            </tr>
+
+            <tr>
+                <td coldspan="2" id="sonuc"></td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

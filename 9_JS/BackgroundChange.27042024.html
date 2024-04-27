@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Change</title>
+
+
+</head>
+<body onload="degistir()" id="test">
+    
+    <input type="button" id="renk" value="Renk Değiştir">
+
+    <script>
+        var dizi = ["#D24D57", "#e74c3c", "#f1c40f", "2c3e50", "8e55ad", "#bdc3c7", "#1abc9c", "#007bff", "#6c757d", "#28a745", "#343a40", "#f8f9fa"];
+
+        var renk = document.getElementById("renk");
+
+        test.onload = function()
+        {
+            var rastgele = Math.floor(Math.random()*dizi.length);
+            document.body.style.backgroundColor = dizi[rastgele];
+        }
+
+        // renk.onclick = function()
+        // {
+        //     var rastgele = Math.floor(Math.random()*dizi.length);
+        //     document.body.style.backgroundColor = dizi[rastgele];
+        // }
+
+        function degistir()
+        {
+            var rastgele = Math.floor(Math.random()*dizi.length);
+            document.body.style.backgroundColor = dizi[rastgele];
+        }
+
+        // document.body.onload = function()
+        // {
+        //     var rastgele = Math.floor(Math.random()*dizi.length);
+        //     document.body.style.backgroundColor = dizi[rastgele];
+        // }
+    </script>
+
+</body>
+</html>
