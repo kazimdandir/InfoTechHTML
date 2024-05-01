@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top {
+            border: 1px solid black;
+            display: inline-block;
+            margin: 5px;
+            padding: 30px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            border-radius: 40px;
+            background-color: greenyellow;
+        }
+
+        .cyan {
+            background-color: cyan;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function getNum(min, max, exNums = []) { // min dahil - max haric
+            let newRand;
+            do {
+                newRand = Math.floor(Math.random() * (max - min)) + min;
+                if (exNums.length == 0) {
+                    return newRand;
+                }
+                for (let e = 0; e < exNums.length; e++) {
+                    if (newRand == exNums[e]) {
+                        break;
+                    } else if ((e+1) == exNums.length) {
+                        return newRand;
+                    }
+                }
+            } while (true)
+        }
+
+        randArray = [];
+        for (let r = 0; r < 6; r++) {
+            randArray[r] = getNum(1, 50, randArray);
+        }
+
+        for (let i = 1; i <= 49; i++) {
+            let type = 'top'
+            for (let k = 0; k < randArray.length; k++) {
+                if (randArray[k] == i) {
+                    type = 'top cyan'
+                }
+            }
+
+            document.write('<div class="' + type + '">' + i + '</div>')
+        }
+        document.write('<br>');
+        //randArray.sort();
+        let type2 = 'top cyan'
+        for (let l = 0; l < randArray.length; l++) {
+            document.write('<div class="'+ type2 +'">'+randArray[l]+'</div>')
+        }
+        console.log()
+    </script>
+</body>
+
+</html>
