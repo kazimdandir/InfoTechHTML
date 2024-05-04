@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List Oluşturma</title>
+</head>
+<body>
+    <h1>TO DO List Örnekleri</h1>
+    <hr>
+
+    <div>
+        <select id="menu">
+            
+        </select>
+    </div>
+
+    <div>
+        <ul id="toDoList">
+
+        </ul>
+    </div>
+
+    <div>
+        <select id="names">
+
+        </select>
+    </div>
+
+    <label>Yazı : </label> <input type="text" id="yazi">
+    <label>Değer : </label> <input type="text" id="deger">
+    <input type="button" value="Ekle" onclick="veriEkle()">
+    <input type="button" value="Listeye Ekle" onclick="addToDo()">
+    <input type="button" value="İsimleri Ekle" onclick="isimleriEkle()">
+
+    <script>
+
+        var isimler = document.getElementById('names');
+
+        const users = [
+            {
+                name : 'John', age : 23, balance : 100,
+                order : [
+                    {name : 'Bilgisayar', quantity: 1, price : 750},
+                    {name : 'Mouse Pad', quantity : 2, price : 20}
+                ]
+            },
+        
+            {
+                name : 'Alice', age : 43, balance : 70,
+                order : [
+                    {name : 'Robot', quantity: 1, price : 100}
+                ]
+            },
+        
+            {
+                name : 'Bob', age : 30, balance : 125,
+                order : [
+                    {name : 'Jelibon', quantity: 5, price : 15},
+                    {name : 'Mouse', quantity : 1, price : 150},
+                    {name : 'Keyboard', quantity : 1, price : 125}
+                ]
+            },
+        ];
+        
+        function isimleriEkle(){
+            for (let i = 0; i < users.length; i++){
+                var opt = users[i].name;
+                var eleman = document.createElement('option');
+                eleman.textContent = opt;
+                eleman.value = opt;
+
+                isimler.appendChild(eleman);
+            }
+        }
+
+        function veriEkle(){
+            let yaziOku = document.getElementById('yazi');
+            let degerOku = document.getElementById('deger');
+            let option = document.createElement('option');
+            option.value = degerOku.value;
+            option.textContent = yaziOku.value;
+
+            document.getElementById('menu').appendChild(option);
+            yaziOku.value = "";
+            degerOku.value = "";
+            yaziOku.focus();
+        }
+
+        function addToDo(){
+            const toDoInput = document.getElementById('yazi');
+            const toDoText = toDoInput.value.trim();
+
+            if (toDoText !== ""){
+                const toDoList = document.getElementById('toDoList');
+                const listItem = document.createElement('li');
+
+                listItem.textContent = toDoText;
+                toDoList.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+</html>

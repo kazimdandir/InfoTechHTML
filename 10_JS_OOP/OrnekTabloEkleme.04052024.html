@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabloya Veri Ekleme</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div id="sayfa">
+        <label>Ad : </label> <input type="text" id="ad">
+        <label>Soyad : </label> <input type="text" id="soyad">
+        <label>Yaş : </label> <input type="number" id="yas">
+        <button id="ekle">Tabloya Ekle</button>
+    </div>
+
+    <div>
+        <table id="liste" class="table table-hover">
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Yas</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        const ad = document.querySelector('#ad');
+        const soyad = document.querySelector('#soyad');
+        const yas = document.querySelector('#yas');
+        const ekle = document.querySelector('#ekle'); //event click
+        const liste = document.querySelector('#liste'); 
+
+        ekle.onclick = function(){
+            let tAd = document.createElement('td'); //her biri için td oluştur
+            let tSoyad = document.createElement('td');
+            let tYas = document.createElement('td');
+
+            tAd.textContent = ad.value; //textboxtan değeri okuyup aktaralım
+            tSoyad.textContent = soyad.value;
+            tYas.textContent = yas.value;
+
+            let tr = document.createElement("tr");
+
+            //td leri tr içine ekleme
+            tr.appendChild(tAd);
+            tr.appendChild(tSoyad);
+            tr.appendChild(tYas);
+
+            liste.appendChild(tr);
+        }
+    </script>
+</body>
+</html>
