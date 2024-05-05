@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araç Kiralama Part 1</title>
+</head>
+<body>
+
+    <input type="text" id="marka" placeholder="Marka Giriniz"><br>
+    <input type="text" id="model" placeholder="Model Giriniz"><br>
+    <input type="text" id="yil" placeholder="Araç Yılını Giriniz"><br>
+    <input type="text" id="renk" placeholder="Renk Giriniz"><br>
+    <input type="text" id="yakit" placeholder="Yakıt Tipi Giriniz"><br>
+    <input type="text" id="saatUcreti" placeholder="Aracın Saatlik Ücretini Giriniz"><br>
+    <input type="button" onclick="islem()" value="Gönder">
+    <button onclick="islem()">Gönder</button>
+
+    <script>
+        function islem()
+        {
+            var arac ={
+            marka: document.getElementById('marka').value,
+            model: document.getElementById('model').value,
+            yil:  parseInt(document.getElementById('yil').value),
+            renk: document.getElementById('renk').value,
+            yakit: document.getElementById('yakit').value,
+            saatUcreti: parseInt(document.getElementById('saatUcreti').value),
+
+            ucretHesapla: function(saat){
+                return saat * this.saatUcreti;
+            },
+
+            aracYasi: function(){
+                const bugun = new Date();
+                return bugun.getFullYear() - this.yil;
+            },
+
+            kaskoPrimi: function(katSayi){
+                if (this.aracYasi()>=1 && this.aracYasi()<=3)
+                {
+                    return katSayi * 100;
+                }
+                else if (this.aracYasi()>3 && this.aracYasi()<=6)
+                {
+                    return katSayi * 150;
+                }
+                else if (this.aracYasi()>6 && this.aracYasi()<=9)
+                {
+                    return katSayi * 250;
+                }
+                else if (this.aracYasi()>9)
+                {
+                    return katSayi * 400;
+                }
+            }
+        }
+
+        console.log(arac.ucretHesapla(5));
+        console.log(arac.aracYasi());
+        console.log(arac.kaskoPrimi(100));
+        }
+    </script>
+</body>
+</html>
