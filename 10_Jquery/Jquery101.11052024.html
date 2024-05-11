@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        .red{
+
+            background-color: red;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <h3 class="title">
+            Title 1
+        </h3>
+
+        <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut eaque sed ducimus id eveniet rerum quaerat totam, sunt, accusamus impedit eum omnis officia quisquam enim ullam. Quod autem numquam recusandae.
+        </p>
+
+        <div class="actions">
+            <button class="btn">Click Me!</button>
+        </div>
+
+        <div class="animation">
+            <h2 class="animated">Hello World</h2>
+            <h3 style="display: none;" class="invisible">Hello my friend</h3>
+            <button class="anime-btn">Click Me!</button>
+        </div>
+    </div>
+
+<script>
+
+//$===jQuery; 
+
+//console.log(jQuery);
+
+//dom üzerinde seçim yapma ve manipulasyon
+const title = $('.wrapper > .title');
+console.log(title);
+console.log(title.text('Merhaba'));
+
+title.addClass('test');
+//title.removeClass('test');
+//title.toggleClass('toggle');
+
+console.log(title.hasClass('test'));
+
+
+//events
+$('.btn').on('click',event=>{
+
+   // console.log(event);
+    //$('.text').css('background','orangered');
+
+$('.text').toggleClass('red');
+});
+
+
+let count = 0;
+
+$('.title').text('Count : ' + count);
+
+$('.btn').click(event=>{
+
+    count++;
+    $('.title').text('Count : ' + count);
+})
+
+
+//Animation
+const animatedText = $('.animated');
+const animeBtn = $('.anime-btn');
+const invisibleText = $('.invisible');
+
+animeBtn.on('click',e=>{
+    animatedText.fadeToggle(1000,e=>{
+        invisibleText.fadeToggle(1000);
+    });
+});
+
+</script>
+
+</body>
+</html>

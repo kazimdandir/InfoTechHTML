@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kutular</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <button id="btn">OLUŞTUR</button>
+    <div id="container"></div>
+
+    <script>
+        let sayac = 1;
+
+        $('#btn').click(function(){
+            var kutu = $('<div>');
+                kutu.addClass('kutu');
+                kutu.html('kutu' + sayac);
+                sayac ++;
+                kutu.css({
+                    backgroundColor:"#FF0000",width:"200px",height:"200px",textAlign:"center", float:"left",margin:"10px",color:"#FFFFFF",lineHeight:"200px",fontSize:"30px"
+                });
+
+                $('#container').append(kutu);
+                kutu.on('click',function(){
+                    $(this).remove();
+                    sayac = 1;
+                });
+        });
+    </script>
+</body>
+</html>

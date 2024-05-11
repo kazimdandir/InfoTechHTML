@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery alan ve çevre</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>Alan ve Çevre Hesabı</h1>
+    <h2 id="alan"></h2>
+    <h2 id="cevre"></h2>
+
+    Uzunluk : <input type="text" id="uzunluk">
+    Uzunluk : <input type="text" id="genislik">
+
+    <button id="hesapla">Hesapla</button>
+
+    <script>
+
+        $('#hesapla').on('click', event=>{
+            var uzunluk = Number($('#uzunluk').val());
+            var genislik = Number($('#genislik').val());
+
+            $('#alan').html("Dikdörtgen Alanı : " + genislik * uzunluk);
+            $('#cevre').html("Dikdörtgen Çevre : " + 2 * (genislik + uzunluk));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dikdörtgen Çizme</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+</head>
+<body>
+    Genişlik : 
+    <input type="text" id="genislik">
+    <br>
+    Yükseklik :
+    <input type="text" id="yukseklik"><button id="btn">ÇİZ</button>
+
+    <div id="container"></div>
+
+<script>
+
+$("#btn").click(function(){
+
+    var genislik = Number($("#genislik").val());
+    var yukseklik = Number($("#yukseklik").val());
+
+ $("#container").css({width : genislik,height:yukseklik,border:"1px solid black",margin:"50px auto","background-color":"red"});
+
+
+ $('#container').html('<img src="https://picsum.photos/' + genislik + '/' + yukseklik + '"/>');
+});
+
+</script>
+
+</body>
+</html>
