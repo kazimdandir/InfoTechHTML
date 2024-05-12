@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY AJAX</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    
+
+    <ul class="user-list"></ul>
+
+<div class="form-wrapper">
+    <form id="user-form">
+
+        <div>
+
+            <label for="user-input">UserName</label>
+            <input type="text" id="user-input">
+        </div>
+
+        <button type="submit">Save User</button>
+
+
+    </form>
+
+
+</div>
+
+
+
+    <script>
+
+        const url = 'https://jsonplaceholder.typicode.com/users';
+        const userList = $('.user-list');
+        const ul = document.querySelector('.user-list');
+
+        /*Classic JS
+
+        function renderUser(users){
+            users.forEach(user => {
+                
+                const li = document.createElement('li');
+                li.innerText=user.name;
+                ul.append(li);
+            });
+        }
+*/
+        /JQUERY İLE/
+
+        function renderUser(users){
+
+            $.each(users,(index,user)=>{
+                $('<li></li>').text(user.name + ' | ' + user.email).appendTo(userList);
+            })
+        }
+
+
+        $.ajax(url).done(users=>{
+
+           renderUser(users);
+        })
+        .fail(error=>{
+
+            console.log(error);
+        })
+
+
+
+/*form submit olayı */
+
+$('#user-form').submit(event=>{
+
+    event.preventDefault();// sayfa yenilenmemesi için yazılan kod
+    
+   // console.log(event);
+   
+   const username = $('#user-input').val();
+   console.log(username);
+
+   const user = {
+        username:username
+
+   };
+
+   $.post(url,user,response=>{
+    console.log(response);
+   })
+
+});
+
+    </script>
+   
+
+</body>
+</html>
